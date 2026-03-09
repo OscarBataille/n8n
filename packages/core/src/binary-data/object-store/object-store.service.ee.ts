@@ -165,7 +165,7 @@ export class ObjectStoreService {
 			const response = await this.s3Client.send(command);
 
 			// Convert response to the expected format for backward compatibility
-			const headers: MetadataResponseHeaders = {};
+			const headers: MetadataResponseHeaders = {'content-type': null, 'content-length': null, 'last-modified': null};
 
 			if (response.ContentType) headers['content-type'] = response.ContentType;
 			if (response.ContentLength) headers['content-length'] = String(response.ContentLength);
