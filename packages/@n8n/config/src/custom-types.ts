@@ -2,7 +2,7 @@ abstract class StringArray<T extends string> extends Array<T> {
 	constructor(str: string, delimiter: string) {
 		super();
 		const parsed = str.split(delimiter) as this;
-		return parsed.filter((i) => typeof i === 'string' && i.length);
+		return parsed.filter((i) => i.length);
 	}
 }
 
