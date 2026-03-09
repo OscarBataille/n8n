@@ -43,7 +43,7 @@ export class ActiveWorkflows {
 	 * Returns if the workflow is active in memory.
 	 */
 	isActive(workflowId: string) {
-		return this.activeWorkflows.hasOwnProperty(workflowId);
+		return workflowId in this.activeWorkflows;
 	}
 
 	/**
